@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "Api_Xavier.Protos";
+
+
+package profesores;
+
+service ProfesorManager{
+	rpc GetAll (EmptyP) returns (Profesores);
+}
+
+message EmptyP{}
+
+message ProfesorId{
+	string id = 1;
+}
+
+message Profesor {
+	string idprof = 1;
+	string nomprof = 2;
+	string apeprof = 3;
+	string espeprof = 4;
+	string dniprof = 5;
+	string celprof = 6;
+}
+
+message Profesores {
+	repeated Profesor items = 1;
+}

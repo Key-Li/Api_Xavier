@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Api_Xavier.Client.Models.CursoModel>
+
+
+
+@using (Html.BeginForm())
+
+{
+
+  <em>Ingrese Codigo</em>
+
+  @Html.TextBox("nombre")
+
+  <button>Consulta</button>
+
+}
+
+
+
+<table class="table">
+
+  <tr>
+
+    <td>Id</td>
+
+    <td>Nombre</td>
+
+    <td>Codigo Horario</td>
+
+    <td>Codigo Profesor</td>
+
+
+  </tr>
+
+  @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idcurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomcurso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idhorario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idprof)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+        }
+
+</table>
+
+

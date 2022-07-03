@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Api_Xavier.Client.Models.ProfesorModel>
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Lista de Profesores</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.idprof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomprof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.apeprof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.espeprof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dniprof)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celprof)
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.idprof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomprof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.apeprof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.espeprof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dniprof)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.celprof)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

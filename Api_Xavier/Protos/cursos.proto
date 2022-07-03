@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "Api_Xavier.Protos";
+
+package  cursos;
+
+service CursosManager{
+	rpc GetAll (EmptyC) returns (Cursos);
+	rpc ListadoCurso (CursoId) returns (Cursos);
+}
+
+message EmptyC{}
+
+message CursoId{
+	string id = 1;
+}
+
+message Curso {
+	string idcurso = 1;
+	string nomcurso = 2;
+	string idhorario = 3;
+	string idprof = 4;
+	
+}
+
+message Cursos {
+	repeated Curso items = 1;
+}

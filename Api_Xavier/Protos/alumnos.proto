@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option csharp_namespace = "Api_Xavier.Protos";
+
+package alumnos;
+
+service AlumnoManager{
+	rpc GetAll (Empty) returns (Alumnos);
+	rpc ListadoNombre (AlumnoId) returns (Alumnos);
+}
+
+message Empty{}
+
+message AlumnoId{
+	string id = 1;
+}
+
+message Alumno {
+	string idalumno = 1;
+	string nomalum = 2;
+	string apealum = 3;
+	string dnialum = 4;
+	string fechalum = 5;
+	string celalum = 6;
+	string usualum = 7;
+	string passalum = 8;
+}
+
+message Alumnos {
+	repeated Alumno items = 1;
+}
